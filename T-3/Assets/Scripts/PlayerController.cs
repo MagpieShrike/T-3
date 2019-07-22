@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     public Transform shotSpawn;
     public float fireRate;
 
+    public AudioSource shotsFired;
+
     private Rigidbody rb;
     private float nextFire;
 
@@ -34,6 +36,7 @@ public class PlayerController : MonoBehaviour
             nextFire = Time.time + fireRate;
             // GameObject clone =
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation); // as GameObject
+            shotsFired.Play();
         }
         
     }
