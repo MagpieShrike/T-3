@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     public Text scoreText;
     public Text gameOverText;
     public Text restartText;
+    public Text creditText;
 
     private int score;
     private bool gameOver;
@@ -33,6 +34,7 @@ public class GameController : MonoBehaviour
 
         restartText.text = "";
         gameOverText.text = "";
+        creditText.text = "";
 
         StartCoroutine (SpawnWaves());
     }
@@ -83,11 +85,19 @@ public class GameController : MonoBehaviour
     void UpdateScore()
     {
         scoreText.text = "Score: " + score;
+
+        if(score >= 100)
+        {
+            gameOverText.text = "You Win!";
+            creditText.text = "Created by Halie Chalkley";
+            gameOver = true;
+        }
     }
 
     public void GameOver()
     {
         gameOverText.text = "Game Over";
+        creditText.text = "Created by Halie Chalkley";
         gameOver = true;
     }
 }
