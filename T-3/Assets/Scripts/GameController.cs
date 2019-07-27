@@ -14,19 +14,19 @@ public class GameController : MonoBehaviour
     public float startWait;
     public float waveWait;
 
-    public Text scoreText;
+    public Text pointText;
     public Text gameOverText;
     public Text restartText;
     public Text creditText;
 
-    private int score;
+    private int points;
     private bool gameOver;
     private bool restart;
 
     // Start is called before the first frame update
     void Start()
     {
-        score = 0;
+        points = 0;
         UpdateScore();
 
         gameOver = false;
@@ -77,17 +77,17 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void AddScore(int newScoreValue)
+    public void AddScore(int newPointValue)
     {
-        score += newScoreValue;
+        points += newPointValue;
         UpdateScore();
     }
 
     void UpdateScore()
     {
-        scoreText.text = "Score: " + score;
+        pointText.text = "Points: " + points;
 
-        if(score >= 100)
+        if(points >= 100)
         {
             gameOverText.text = "You Win!";
             creditText.text = "Created by Halie Chalkley";
