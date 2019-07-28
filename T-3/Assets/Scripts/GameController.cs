@@ -43,7 +43,7 @@ public class GameController : MonoBehaviour
     {
         if (restart)
         {
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.X))
             {
                 SceneManager.LoadScene("Space Shooter");
             }
@@ -70,7 +70,7 @@ public class GameController : MonoBehaviour
 
             if (gameOver)
             {
-                restartText.text = "Press 'R' to Restart";
+                restartText.text = "Press 'X' to Restart";
                 restart = true;
                 break;
             }
